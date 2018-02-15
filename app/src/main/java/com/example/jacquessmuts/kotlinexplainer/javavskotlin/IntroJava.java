@@ -1,4 +1,4 @@
-package com.example.jacquessmuts.kotlinexplainer;
+package com.example.jacquessmuts.kotlinexplainer.javavskotlin;
 
 import android.view.View;
 

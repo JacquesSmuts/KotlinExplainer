@@ -1,4 +1,4 @@
-package com.example.jacquessmuts.kotlinexplainer
+package com.example.jacquessmuts.kotlinexplainer.javavskotlin
 
 /**
  * Created by jacquessmuts on 2018/02/15.
