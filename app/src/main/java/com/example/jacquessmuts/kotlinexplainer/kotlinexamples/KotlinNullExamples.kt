@@ -3,7 +3,7 @@ package com.example.jacquessmuts.kotlinexplainer.kotlinexamples
 /**
  * Created by jacquessmuts on 2018/02/15.
  */
-class NullExamples {
+class KotlinNullExamples {
 
     /**
      * How to do it wrong

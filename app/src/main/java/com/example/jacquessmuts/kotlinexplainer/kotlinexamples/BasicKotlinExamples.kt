@@ -1,8 +1,5 @@
 package com.example.jacquessmuts.kotlinexplainer.kotlinexamples
 
-import android.widget.RelativeLayout.LayoutParams as RelativeLayoutParams
-import android.widget.LinearLayout.LayoutParams as LinearLayoutParams //import renaming
-
 /**
  * Created by jacquessmuts on 2018/02/15.
  */
@@ -51,42 +48,33 @@ class BasicKotlinExamples {
     }
 
     /**
-     * Assign value inside a try block
+     * varargs are handled easily
      */
-    val success = try {
-        reverseEntropy()
-        true
-    } catch (e: Exception) {
-        println(e)
-        false
-    }
-
-    /**
-     * Unit is the Kotlin equivalent of void
-     * Usually you wouldn't declare Unit
-     */
-    fun reverseEntropy() : Unit {
-        throw Exception("INSUFFICIENT DATA FOR MEANINGFUL ANSWER")
-    }
-
-    /**
-     * Demonstration of labels "@Outerclass" and @"InnerClass"
-     */
-    val commonName = 1010101;
-    inner class OuterClass {
-        private val commonName = 42
-
-        inner class InnerClass {
-            private val commonName = 94
-
-            fun foo(s: String) {
-                println("Field <commonName> from InnerClass" + this.commonName)
-                println("Field <commonName> from InnerClass" + this@InnerClass.commonName)
-                println("Field <commonName> from OuterClass" + this@OuterClass.commonName)
-                println("Field <commonName> from BasicKotlin" + this@BasicKotlinExamples.commonName)
-            }
+    fun loopingThroughVarargs(vararg strings:String){
+        for (stringy in strings){
+            println(stringy)
         }
     }
+
+    /**
+     * You can pass varargs easily from an array, using the *spread operator
+     */
+    fun callingTheVarArg(){
+
+        //pass arbitrary number of strings
+        loopingThroughVarargs("hi", "hello")
+
+        //use an array with the *spread operator
+        val arrayOfStrings = arrayOf<String> ("hi", "hello", "hello there")
+        loopingThroughVarargs(*arrayOfStrings)
+
+        //or use a List/Collection
+        val listOfStrings = listOf("hi", "hello", "hello there", "General Kenobi")
+        loopingThroughVarargs(*listOfStrings) //the *spread operator doesn't work on lists
+
+        loopingThroughVarargs(*listOfStrings.toTypedArray())  //create an array from the list first
+    }
+
 
     /**
      * This is the Kotlin equivalent of having a static variable and function
@@ -97,36 +85,8 @@ class BasicKotlinExamples {
             println("Calling a doSomething (${++count} call/-s in  total)")
         }
     }
-
     /**
-     * You can declare functions inside of functions
-     */
-    fun fizzbuzz(start: Int, end: Int) {
-
-        for (k in start..end) {
-            fun isFizz(): Boolean = k % 3 == 0
-            fun isBuzz(): Boolean = k % 5 == 0
-
-            when {
-                isFizz() && isBuzz() -> println("Fizz Buzz")
-                isFizz() -> println("Fizz")
-                isBuzz() -> println("Buzz")
-                else -> println(k)
-            }
-        }
-    }
-
-    /**
-     * Require example
-     */
-    fun loginWithRequire(password: String) {
-        require(password.length < 200000){ "You cannot use John Galt's Speech as a password" }
-        //The password has been validated,
-        //Do login stuff now
-    }
-
-    /**
-     * Instead of declare separate functions, like the commented functions below,
+     * Instead of declaring separate functions
      * you can declare one function and set defaults.
      */
     fun defaultValuesExample(value: Int, shouldRound: Boolean = false,
