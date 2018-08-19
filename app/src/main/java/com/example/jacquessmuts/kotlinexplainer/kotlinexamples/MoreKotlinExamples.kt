@@ -4,6 +4,8 @@ package com.example.jacquessmuts.kotlinexplainer.kotlinexamples
  * Created by jacquessmuts on 2018/02/15.
  */
 
+import android.os.Handler
+import android.util.Log
 import android.widget.RelativeLayout.LayoutParams
 import java.util.*
 import android.widget.LinearLayout.LayoutParams as LinearLayoutParams //import renaming
@@ -85,6 +87,39 @@ class MoreKotlinExamples{
                 else -> println(k)
             }
         }
+    }
+
+    /**
+     * you can pass a function as a parameter
+     */
+    fun longAsyncFunction(asyncListenerFunction: (value: String) -> Unit){
+
+        Handler().postDelayed({
+            Thread.sleep(10000)
+            asyncListenerFunction("Done")
+        }, 1000)
+
+    }
+
+    fun longAsyncImplementation(){
+
+        //passing a lambda
+        longAsyncFunction { value ->
+            System.out.print(value)
+        }
+
+        //Same as above, using 'it'
+        longAsyncFunction {
+            System.out.print(it)
+        }
+
+        //passing a function
+        longAsyncFunction(this::printValue)
+
+    }
+
+    fun printValue(value: String){
+        System.out.print(value)
     }
 
 }

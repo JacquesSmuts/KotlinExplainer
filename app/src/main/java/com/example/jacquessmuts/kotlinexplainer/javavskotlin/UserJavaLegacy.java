@@ -2,9 +2,10 @@ package com.example.jacquessmuts.kotlinexplainer.javavskotlin;
 
 /**
  * Created by jacquessmuts on 2018/02/15.
+ * This is one of those legacy files that are a bit of a mess
  */
 
-public class UserJava {
+public class UserJavaLegacy {
 
     private long id;
     private String username;
@@ -15,7 +16,7 @@ public class UserJava {
         WHALE, DOLPHIN, GOLDFISH;
     }
 
-    public UserJava(long id) {
+    public UserJavaLegacy(long id) {
         this.id = id;
         this.username = "Hello There";
         this.password = "General Kenobi";
@@ -23,7 +24,7 @@ public class UserJava {
     }
 
     //CONSTRUCTOR
-    public UserJava(long id, String username, String password, Type type) {
+    public UserJavaLegacy(long id, String username, String password, Type type) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -32,11 +33,11 @@ public class UserJava {
 
     //GETTERS AND SETTERS
 
-    public long getId() {
+    public long getTheId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setNewId(long id) {
         this.id = id;
     }
 
@@ -44,15 +45,15 @@ public class UserJava {
         return username;
     }
 
-    public void setUsername(String username) {
+    public void setNewUsername(String username) {
         this.username = username;
     }
 
-    public String getPassword() {
+    public String getUserPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
+    public void setNewPassword(String password) {
         this.password = password;
     }
 
@@ -60,17 +61,14 @@ public class UserJava {
         return type;
     }
 
-    public void setType(Type type) {
+    public void setNewType(Type type) {
         this.type = type;
     }
 
     //Important to create your own definition of .equals for all classes
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof UserJava) {
-            UserJava userJava = (UserJava) obj;
-            return getId() == userJava.getId();
-        }
-        return false;
+        UserJavaLegacy userJava = (UserJavaLegacy) obj;
+        return getTheId() == userJava.getTheId();
     }
 }

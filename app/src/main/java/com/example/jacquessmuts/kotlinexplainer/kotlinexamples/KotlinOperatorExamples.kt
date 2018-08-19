@@ -24,7 +24,7 @@ class KotlinOperatorExamples{
      */
     class BitcoinPrice {
         var valueInDollars = 8000.00
-        infix fun recalculate(secondsPassed: Int): Unit {
+        infix fun recalculate(secondsPassed: Int) {
             this.valueInDollars = (secondsPassed * (Random().nextInt(10)  -  5)).toDouble()
         }
     }
@@ -33,7 +33,7 @@ class KotlinOperatorExamples{
      * Demonstration of infix usage
      */
     fun infixExample(){
-        var currentValue = BitcoinPrice()
+        val currentValue = BitcoinPrice()
         currentValue.recalculate(60*60) //call the function normally
         currentValue recalculate 60*60 //or as an operator, thanks to infix
     }
