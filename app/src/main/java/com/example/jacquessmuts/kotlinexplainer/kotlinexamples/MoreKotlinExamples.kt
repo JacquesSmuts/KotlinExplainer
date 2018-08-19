@@ -103,23 +103,23 @@ class MoreKotlinExamples{
 
     fun longAsyncImplementation(){
 
+        //passing a function
+        longAsyncFunction(this::printValue)
+
         //passing a lambda
         longAsyncFunction { value ->
-            System.out.print(value)
+            println(value)
         }
 
         //Same as above, using 'it'
         longAsyncFunction {
-            System.out.print(it)
+            println(it)
         }
-
-        //passing a function
-        longAsyncFunction(this::printValue)
 
     }
 
     fun printValue(value: String){
-        System.out.print(value)
+        println(value)
     }
 
 }

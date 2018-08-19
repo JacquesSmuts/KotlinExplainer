@@ -2,6 +2,7 @@ package com.example.jacquessmuts.kotlinexplainer.javavskotlin
 
 /**
  * Created by jacquessmuts on 2018/02/15.
+ * converted to kotlin in revision 6d989692a6a2fe3331f47a690c3cb84ff8c7e767
  */
 
 class UserKotlin(var id: Long,
