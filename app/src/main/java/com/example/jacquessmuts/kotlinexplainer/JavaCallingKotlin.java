@@ -2,6 +2,9 @@ package com.example.jacquessmuts.kotlinexplainer;
 
 import com.example.jacquessmuts.kotlinexplainer.javavskotlin.StringUtilsJava;
 import com.example.jacquessmuts.kotlinexplainer.javavskotlin.StringUtilsKotlin;
+import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserManagerJava;
+import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserManagerKotlin;
+import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserManagerKotlinJavaSupport;
 import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserJava;
 import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserKotlin;
 import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserKotlinWithJavaSupport;
@@ -12,8 +15,10 @@ import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserKotlinWithJavaS
  */
 public class JavaCallingKotlin {
 
-    void callingStringUtils(){
 
+
+
+    void callingStringUtils(){
 
         //this is the original
         String normalizedJava = StringUtilsJava.normalize("Hello_There");
@@ -26,9 +31,6 @@ public class JavaCallingKotlin {
 
         //this works because commaSplit has been annotated with @JvmStatic
         String[] splitKotlin = StringUtilsKotlin.commaSplit("Hello, sir");
-
-
-
     }
 
     void callingFields(){
@@ -45,6 +47,18 @@ public class JavaCallingKotlin {
         String usernameKotlin = userKotlin.username; //doesn't work
 
         String usernameKotlin2 = userKotlinWithJavaSupport.username; //works, because [@JvmField]
+
+    }
+
+    void instances(){
+
+        UserManagerJava userManager1 = UserManagerJava.getInstance();
+
+        //doesn't work, because of lack of @JvmStatic
+        UserManagerKotlin userManager2 = UserManagerKotlin.getInstance();
+
+        UserManagerKotlinJavaSupport userManager3 = UserManagerKotlinJavaSupport.getInstance();
+
 
     }
 

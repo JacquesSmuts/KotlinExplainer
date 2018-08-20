@@ -8,7 +8,7 @@ import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserKotlinWithJavaS
 
 /**
  * Created by jacquessmuts on 2018/08/19
- * This is a Java class which calls Kotlin classes to see if the conversion is done
+ * This is a Java class which calls Kotlin classes to see if the conversion is done right
  */
 class KotlinCallingKotlin {
 
