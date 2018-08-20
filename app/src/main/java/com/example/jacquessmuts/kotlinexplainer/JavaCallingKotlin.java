@@ -2,6 +2,9 @@ package com.example.jacquessmuts.kotlinexplainer;
 
 import com.example.jacquessmuts.kotlinexplainer.javavskotlin.StringUtilsJava;
 import com.example.jacquessmuts.kotlinexplainer.javavskotlin.StringUtilsKotlin;
+import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserJava;
+import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserKotlin;
+import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserKotlinWithJavaSupport;
 
 /**
  * Created by jacquessmuts on 2018/08/19
@@ -29,6 +32,19 @@ public class JavaCallingKotlin {
     }
 
     void callingFields(){
+
+        UserJava userJava = new UserJava(1);
+        String usernameJava = userJava.username; //it's a public variable
+
+        //doesn't work
+        UserKotlin userKotlin = new UserKotlin(1);
+
+        //works, because [@JvmOverloads constructor] has been added
+        UserKotlinWithJavaSupport userKotlinWithJavaSupport = new UserKotlinWithJavaSupport(1);
+
+        String usernameKotlin = userKotlin.username; //doesn't work
+
+        String usernameKotlin2 = userKotlinWithJavaSupport.username; //works, because [@JvmField]
 
     }
 

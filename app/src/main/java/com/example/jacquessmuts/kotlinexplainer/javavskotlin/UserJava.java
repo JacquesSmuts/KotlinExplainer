@@ -7,7 +7,7 @@ package com.example.jacquessmuts.kotlinexplainer.javavskotlin;
 public class UserJava {
 
     private long id;
-    private String username;
+    public String username;
     private String password; //save this to analytics and collect passwords
     private Type type;
 

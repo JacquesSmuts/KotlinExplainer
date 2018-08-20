@@ -26,16 +26,16 @@ class KotlinNullExamples {
         alsoNullableName = null
 
         val notNullName: String = "Javert"
-        val maybeNullName: String? = null
+        val maybeNullName: String? = "Prisoner 24601"
 
         println(notNullName.length) //fine because it's not nullable
 
         println(maybeNullName.length) //error because it may be null
 
-        if (maybeNullName != null)
-        {
+        if (maybeNullName != null) {
             println(maybeNullName.length) //it won't crash, but can be better
         }
+
         println(maybeNullName?.length) //same as above, but better
 
     }
