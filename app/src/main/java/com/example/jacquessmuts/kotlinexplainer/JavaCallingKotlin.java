@@ -52,12 +52,17 @@ public class JavaCallingKotlin {
 
     void instances(){
 
+        //The original method
         UserManagerJava userManager1 = UserManagerJava.getInstance();
 
         //doesn't work, because of lack of @JvmStatic
         UserManagerKotlin userManager2 = UserManagerKotlin.getInstance();
 
-        UserManagerKotlinJavaSupport userManager3 = UserManagerKotlinJavaSupport.getInstance();
+        //This works, but then you have to change the Java code to fit
+        UserManagerKotlinJavaSupport userManager3 = UserManagerKotlinJavaSupport.instanceB;
+
+        //Perfect
+        UserManagerKotlinJavaSupport userManager4 = UserManagerKotlinJavaSupport.getInstance();
 
 
     }
