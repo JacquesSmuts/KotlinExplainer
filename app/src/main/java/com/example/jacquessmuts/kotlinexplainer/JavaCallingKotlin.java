@@ -15,9 +15,6 @@ import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserKotlinWithJavaS
  */
 public class JavaCallingKotlin {
 
-
-
-
     void callingStringUtils(){
 
         //this is the original
@@ -58,12 +55,12 @@ public class JavaCallingKotlin {
         //doesn't work, because of lack of @JvmStatic
         UserManagerKotlin userManager2 = UserManagerKotlin.getInstance();
 
-        //This works, but then you have to change the Java code to fit
-        UserManagerKotlinJavaSupport userManager3 = UserManagerKotlinJavaSupport.instanceB;
+        //These work, but then you have to change the Java code to fit
+        UserManagerKotlin userManager3 = UserManagerKotlin.Companion.getInstance();
+        UserManagerKotlinJavaSupport userManager4 = UserManagerKotlinJavaSupport.instanceB;
 
         //Perfect
-        UserManagerKotlinJavaSupport userManager4 = UserManagerKotlinJavaSupport.getInstance();
-
+        UserManagerKotlinJavaSupport userManager5 = UserManagerKotlinJavaSupport.getInstance();
 
     }
 

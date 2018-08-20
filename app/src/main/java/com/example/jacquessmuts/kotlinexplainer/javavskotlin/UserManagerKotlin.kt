@@ -3,14 +3,16 @@ package com.example.jacquessmuts.kotlinexplainer.javavskotlin
 
 class UserManagerKotlin {
 
-    private var instance: UserManagerKotlin? = null
+    companion object {
+        private var instance: UserManagerKotlin? = null
+        fun getInstance(): UserManagerKotlin {
+            if (instance == null) {
+                instance = UserManagerKotlin()
+            }
 
-    fun getInstance(): UserManagerKotlin {
-        if (instance == null) {
-            instance = UserManagerKotlin()
+            return instance as UserManagerKotlin
         }
-
-        return instance as UserManagerKotlin
     }
+
 
 }
