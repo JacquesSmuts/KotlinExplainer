@@ -1,4 +1,4 @@
-package com.example.jacquessmuts.kotlinexplainer
+package com.example.jacquessmuts.kotlinexplainer.javavskotlin
 
 import com.example.jacquessmuts.kotlinexplainer.javavskotlin.*
 

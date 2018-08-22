@@ -4,14 +4,19 @@ import android.view.View
 
 /**
  * Created by jacquessmuts on 2018/02/15.
+ * This is a conversion, with notes, of IntroJava
  */
 
 open class IntroKotlin {
 
+    //companion object is a safely managed static class, shared among all instances of this class
     companion object {
-        val EXTRA_KEY_USERNAME = "username"
-        var sSelectedUser = "User1"
+        val DEFAULT_ID = 101 // same public final static int
+        const val EXTRA_KEY_USERNAME = "username" //const keyword
+        var sSelectedUser = "User1" //same as public static String, but safer
     }
+
+    const val EXTRA_THINGY = "bob" //const must be inside companion object
 
     private val mIntroKotlin = IntroKotlin()
     internal val mUserKotlin = UserKotlin(1)
@@ -37,6 +42,9 @@ open class IntroKotlin {
         return isTheSame || isEqual
     }
 
+    /**
+     * Example of using "when" instead of switch
+     */
     fun marketingText(userKotlin: UserKotlin?): String {
         var userKotlin = userKotlin
 
@@ -56,6 +64,9 @@ open class IntroKotlin {
         return toReturn
     }
 
+    /**
+     * An inner class is only accessible from within the parent class
+     */
     inner class ChildClass : IntroKotlin(), View.OnClickListener {
         override fun onClick(view: View) {
             //clickity clackity cloo

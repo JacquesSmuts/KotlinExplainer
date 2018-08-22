@@ -4,10 +4,12 @@ import android.view.View;
 
 /**
  * Created by jacquessmuts on 2018/02/15.
+ * This class is mostly there to show differences between this class and
+ * [com.example.jacquessmuts.kotlinexplainer.javavskotlin.IntroKotlin]
  */
-
 public class IntroJava {
 
+    public static final int DEFAULT_ID = 101;
     public static final String EXTRA_KEY_USERNAME = "username";
     public static String sSelectedUser = "User1";
 
