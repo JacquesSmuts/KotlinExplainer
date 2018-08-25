@@ -1,4 +1,4 @@
-package com.example.jacquessmuts.kotlinexplainer.javavskotlin;
+package com.example.jacquessmuts.kotlinexplainer.javavskotlin.java;
 
 import java.net.URLEncoder;
 
@@ -7,9 +7,9 @@ import java.net.URLEncoder;
  * This is an example of a generic utility class contained in most big projects
  */
 
-public class StringUtilsJava {
+public class StringUtils {
 
-    private static final String LOG_TAG = StringUtilsJava.class.getSimpleName();
+    private static final String LOG_TAG = StringUtils.class.getSimpleName();
 
     /**
      * URL encode a string using UTF-8 character encoding.

@@ -1,31 +1,31 @@
-package com.example.jacquessmuts.kotlinexplainer.javavskotlin;
+package com.example.jacquessmuts.kotlinexplainer.javavskotlin.java;
 
 import android.view.View;
 
 /**
  * Created by jacquessmuts on 2018/02/15.
  * This class is mostly there to show differences between this class and
- * [com.example.jacquessmuts.kotlinexplainer.javavskotlin.IntroKotlin]
+ * [com.example.jacquessmuts.kotlinexplainer.javavskotlin.kotlin.Intro]
  */
-public class IntroJava {
+public class Intro {
 
     public static final int DEFAULT_ID = 101;
     public static final String EXTRA_KEY_USERNAME = "username";
     public static String sSelectedUser = "User1";
 
-    private IntroJava mIntroJava = new IntroJava();
-    final UserJava mUserJava = new UserJava(1);
+    private Intro mIntroJava = new Intro();
+    final User mUser = new User(1);
 
     /**
-     * Compares any given class to a standard IntroJava class.
-     * @param toCompare can be any Object, but preferablty an IntroJava
+     * Compares any given class to a standard Intro class.
+     * @param toCompare can be any Object, but preferablty an Intro
      * @return true if similar
      */
     public boolean doesClassCompare(Object toCompare){
 
-        IntroJava introJava;
-        if (toCompare != null && toCompare instanceof IntroJava){
-            introJava = (IntroJava) toCompare;
+        Intro introJava;
+        if (toCompare != null && toCompare instanceof Intro){
+            introJava = (Intro) toCompare;
         } else {
             return false;
         }
@@ -37,13 +37,13 @@ public class IntroJava {
         return (isTheSame || isEqual);
     }
 
-    public String marketingText(UserJava userJava){
+    public String marketingText(User user){
 
-        if (userJava == null) userJava = mUserJava;
+        if (user == null) user = mUser;
 
         String toReturn = "Please use this app some more";
 
-        switch (userJava.getType()){
+        switch (user.getType()){
             case WHALE:
                 toReturn = "Thanks for Javaing so much! Here's a free crate";
                 break;
@@ -58,7 +58,7 @@ public class IntroJava {
         return toReturn;
     }
 
-    public class ChildClass extends IntroJava implements View.OnClickListener {
+    public class ChildClass extends Intro implements View.OnClickListener {
         @Override
         public void onClick(View view) {
             //clickity clackity cloo

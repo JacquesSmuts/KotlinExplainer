@@ -1,4 +1,4 @@
-package com.example.jacquessmuts.kotlinexplainer.javavskotlin
+package com.example.jacquessmuts.kotlinexplainer.javavskotlin.kotlin
 
 import java.net.URLEncoder
 
@@ -7,9 +7,9 @@ import java.net.URLEncoder
  * This is an example of a generic utility class contained in most big projects
  */
 
-object StringUtilsKotlin {
+object StringUtilsk {
 
-    private val LOG_TAG = StringUtilsKotlin::class.java.simpleName
+    private val LOG_TAG = StringUtilsk::class.java.simpleName
 
     /**
      * URL encode a string using UTF-8 character encoding.

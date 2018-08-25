@@ -1,10 +1,10 @@
-package com.example.jacquessmuts.kotlinexplainer.javavskotlin;
+package com.example.jacquessmuts.kotlinexplainer.javavskotlin.java;
 
 /**
  * Created by jacquessmuts on 2018/02/15.
  */
 
-public class UserJava {
+public class User {
 
     private long id;
     public String username;
@@ -15,7 +15,7 @@ public class UserJava {
         WHALE, DOLPHIN, GOLDFISH;
     }
 
-    public UserJava(long id) {
+    public User(long id) {
         this.id = id;
         this.username = "Hello There";
         this.password = "General Kenobi";
@@ -23,7 +23,7 @@ public class UserJava {
     }
 
     //CONSTRUCTOR
-    public UserJava(long id, String username, String password, Type type) {
+    public User(long id, String username, String password, Type type) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -67,9 +67,9 @@ public class UserJava {
     //Important to create your own definition of .equals for all classes
     @Override
     public boolean equals(Object obj) {
-        if (obj instanceof UserJava) {
-            UserJava userJava = (UserJava) obj;
-            return getId() == userJava.getId();
+        if (obj instanceof User) {
+            User user = (User) obj;
+            return getId() == user.getId();
         }
         return false;
     }

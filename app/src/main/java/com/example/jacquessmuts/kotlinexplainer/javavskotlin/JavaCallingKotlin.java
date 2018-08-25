@@ -1,13 +1,13 @@
 package com.example.jacquessmuts.kotlinexplainer.javavskotlin;
 
-import com.example.jacquessmuts.kotlinexplainer.javavskotlin.StringUtilsJava;
-import com.example.jacquessmuts.kotlinexplainer.javavskotlin.StringUtilsKotlin;
-import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserManagerJava;
-import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserManagerKotlin;
-import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserManagerKotlinJavaSupport;
-import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserJava;
-import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserKotlin;
-import com.example.jacquessmuts.kotlinexplainer.javavskotlin.UserKotlinWithJavaSupport;
+import com.example.jacquessmuts.kotlinexplainer.javavskotlin.java.StringUtils;
+import com.example.jacquessmuts.kotlinexplainer.javavskotlin.java.User;
+import com.example.jacquessmuts.kotlinexplainer.javavskotlin.java.UserManager;
+import com.example.jacquessmuts.kotlinexplainer.javavskotlin.kotlin.StringUtilsk;
+import com.example.jacquessmuts.kotlinexplainer.javavskotlin.kotlin.UserManagerk;
+import com.example.jacquessmuts.kotlinexplainer.javavskotlin.kotlin.Userk;
+import com.example.jacquessmuts.kotlinexplainer.javavskotlin.kotlinwithjavasupport.UserManagerjk;
+import com.example.jacquessmuts.kotlinexplainer.javavskotlin.kotlinwithjavasupport.Userjk;
 
 /**
  * Created by jacquessmuts on 2018/08/19
@@ -18,28 +18,28 @@ public class JavaCallingKotlin {
     void callingStringUtils(){
 
         //this is the original
-        String normalizedJava = StringUtilsJava.normalize("Hello_There");
+        String normalizedJava = StringUtils.normalize("Hello_There");
 
         //This doesn't work, because normalize has not been exposed as a static yet
-        String normalizedKotlin = StringUtilsKotlin.normalize("Hello_There");
+        String normalizedKotlin = StringUtilsk.normalize("Hello_There");
 
         //this is the original
-        String[] splitJava = StringUtilsJava.commaSplit("Hello, sir");
+        String[] splitJava = StringUtils.commaSplit("Hello, sir");
 
         //this works because commaSplit has been annotated with @JvmStatic
-        String[] splitKotlin = StringUtilsKotlin.commaSplit("Hello, sir");
+        String[] splitKotlin = StringUtilsk.commaSplit("Hello, sir");
     }
 
     void callingFields(){
 
-        UserJava userJava = new UserJava(1);
-        String usernameJava = userJava.username; //it's a public variable
+        User user = new User(1);
+        String usernameJava = user.username; //it's a public variable
 
         //doesn't work
-        UserKotlin userKotlin = new UserKotlin(1);
+        Userk userKotlin = new Userk(1);
 
         //works, because [@JvmOverloads constructor] has been added
-        UserKotlinWithJavaSupport userKotlinWithJavaSupport = new UserKotlinWithJavaSupport(1);
+        Userjk userKotlinWithJavaSupport = new Userjk(1);
 
         String usernameKotlin = userKotlin.username; //doesn't work
 
@@ -50,17 +50,16 @@ public class JavaCallingKotlin {
     void instances(){
 
         //The original method
-        UserManagerJava userManager1 = UserManagerJava.getInstance();
+        UserManager userManager1 = UserManager.getInstance();
 
         //doesn't work, because of lack of @JvmStatic
-        UserManagerKotlin userManager2 = UserManagerKotlin.getInstance();
+        UserManagerk userManager2 = UserManagerk.getInstance();
 
-        //These work, but then you have to change the Java code to fit
-        UserManagerKotlin userManager3 = UserManagerKotlin.Companion.getInstance();
-        UserManagerKotlinJavaSupport userManager4 = UserManagerKotlinJavaSupport.instanceB;
+        //This work, but then you have to change the Java code to fit
+        UserManagerk userManager3 = UserManagerk.Companion.getInstance();
 
         //Perfect
-        UserManagerKotlinJavaSupport userManager5 = UserManagerKotlinJavaSupport.getInstance();
+        UserManagerjk userManager4 = UserManagerjk.getInstance();
 
     }
 

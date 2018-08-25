@@ -1,11 +1,11 @@
-package com.example.jacquessmuts.kotlinexplainer.javavskotlin;
+package com.example.jacquessmuts.kotlinexplainer.javavskotlin.java;
 
 /**
  * Created by jacquessmuts on 2018/02/15.
  * This is one of those legacy files that are a bit of a mess
  */
 
-public class UserJavaLegacy {
+public class UserLegacy {
 
     private long id;
     private String username;
@@ -16,7 +16,7 @@ public class UserJavaLegacy {
         WHALE, DOLPHIN, GOLDFISH;
     }
 
-    public UserJavaLegacy(long id) {
+    public UserLegacy(long id) {
         this.id = id;
         this.username = "Hello There";
         this.password = "General Kenobi";
@@ -24,7 +24,7 @@ public class UserJavaLegacy {
     }
 
     //CONSTRUCTOR
-    public UserJavaLegacy(long id, String username, String password, Type type) {
+    public UserLegacy(long id, String username, String password, Type type) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -68,7 +68,7 @@ public class UserJavaLegacy {
     //Important to create your own definition of .equals for all classes
     @Override
     public boolean equals(Object obj) {
-        UserJavaLegacy userJava = (UserJavaLegacy) obj;
+        UserLegacy userJava = (UserLegacy) obj;
         return getTheId() == userJava.getTheId();
     }
 }
